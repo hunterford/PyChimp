@@ -126,7 +126,7 @@ class PyChimp(object):
         return self.callServer("campaignSendNow", params)
 
 
-    def campaignSendTest(self, cid, test_emails={}, send_type=None):
+    def campaignSendTest(self, cid, test_emails=[], send_type=None):
         '''
         Send a test of this campaign to the provided email address
     
@@ -1805,9 +1805,9 @@ class PyChimp(object):
             if key is not None and not isinstance(key, int):
                 name = "%s[%s]" % (key, name)
             if isinstance(val, dict):
-                ret.update(httpBuildQuery(val, name))
+                ret.update(self.httpBuildQuery(val, name))
             elif isinstance(val, list):
-                ret.update(httpBuildQuery(dict(enumerate(val)), name))
+                ret.update(self.httpBuildQuery(dict(enumerate(val)), name))
             elif val is not None:
                 ret[name] = val
     
