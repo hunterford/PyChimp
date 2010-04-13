@@ -1,10 +1,10 @@
-__version__ = '0.1'
-
 import simplejson
 import urllib
 import urllib2
 
 from urlparse import urlparse
+
+__version__ = '0.1'
 
 class PyChimp(object):
     version = '1.2'

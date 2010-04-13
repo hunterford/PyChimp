@@ -1,0 +1,27 @@
+MailChimp Python API Wrapper 0.1
+-------------------------------------------------------------------------------
+API Version: 1.2
+Tested under: Python 2.6
+
+Requires:
+    * Python 2.5
+
+Example Usage
+------------------
+    >>> from pychimp import PyChimp
+    >>> api = PyChimp('2c0f98d36e364134ea4d22fd252de') # use your API key
+    >>> api.ping()
+    u"Everything's Chimpy!"
+
+===== Advanced Options =====
+SSL support
+------------------
+The API does supporting connecting via SSL for those worried about Man-in-the-Middle 
+attacks/data collection. To use it in the MCAPI wrapper, simple do this:
+	
+	from pychimp import PyChimp
+	
+	api = PyChimp('2c0f98d36e364134ea4d22fd252de')
+	api.useSecure(True)
+
+That can be turned on and off as necessary.
